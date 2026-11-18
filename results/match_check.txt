@@ -1,0 +1,29 @@
+CONTROL: baseline at batch 1 vs baseline at batch 4 (same 16 prompts)
+  edit: 16/16 identical, first difference at char []
+  open: 16/16 identical, first difference at char []
+
+SPECULATIVE vs BASELINE at the same batch size
+  ngram_k4  edit batch  1: 16/16 identical
+  ngram_k4  edit batch  4: 16/16 identical
+  ngram_k4  edit batch 16: 32/32 identical
+  ngram_k4  edit batch 64: 64/64 identical
+  ngram_k4  open batch  1: 13/16 identical, first difference at char [445, 887, 502]
+  ngram_k4  open batch  4: 15/16 identical, first difference at char [241]
+  ngram_k4  open batch 16: 29/32 identical, first difference at char [413, 280, 331]
+  ngram_k4  open batch 64: 51/64 identical, first difference at char [155, 155, 588, 243, 243, 1496, 588, 152, 301, 853, 301, 1496, 1080]
+  draft_k4  edit batch  1: 16/16 identical
+  draft_k4  edit batch  4: 16/16 identical
+  draft_k4  edit batch 16: 32/32 identical
+  draft_k4  edit batch 64: 64/64 identical
+  draft_k4  open batch  1: 13/16 identical, first difference at char [445, 887, 502]
+  draft_k4  open batch  4: 15/16 identical, first difference at char [241]
+  draft_k4  open batch 16: 29/32 identical, first difference at char [502, 241, 155]
+  draft_k4  open batch 64: 59/64 identical, first difference at char [654, 152, 301, 301, 1080]
+
+EXAMPLE ngram_k4, open, batch 1, split at char 445:
+  baseline: ...'cularly common in applications that run for a long time, such as web servers or background services. To prevent memory leaks, developers mus'
+  ngram_k4: ...'cularly common in applications that run for a long time, such as web servers or desktop applications. To prevent memory leaks, developers mu'
+
+EXAMPLE ngram_k4, open, batch 1, split at char 887:
+  baseline: ...'prevents data corruption and ensures that the application behaves predictably.\n\nIn summary, a mutex is a synchronization mechanism that help'
+  ngram_k4: ...'prevents data corruption and ensures that the application behaves predictably.\n\nHere is an example of how a mutex can be used in C++:\n\n```cp'
